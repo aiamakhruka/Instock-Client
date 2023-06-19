@@ -1,0 +1,203 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  @include cardSizing;
+
+  @include tablet {
+    @include tablet-grid;
+  }
+  @include desktop {
+    width: 63.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0.5px solid $Cloud;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 2rem 1.5rem 2rem;
+    }
+
+    &-button {
+      align-self: center;
+      background-color: $Instock-Indigo;
+      border-radius: 1.25rem;
+      border-style: none;
+      width: 2.25rem;
+      height: 2.25rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $Graphite;
+      }
+
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 5.0625rem;
+      }
+      &-icon {
+        width: 0.9375rem;
+        height: 0.9375rem;
+        filter: brightness(4) sepia(0) hue-rotate(0deg) saturate(0);
+      }
+
+      &-text {
+        display: none;
+        color: $White;
+        @include tablet {
+          @include tablet_desktop_labels-buttons;
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  &__arrow-icon {
+    padding-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__title {
+    @include page-header;
+    width: stretch;
+    color: $Instock-Black;
+
+    @include tablet {
+      @include tablet_desktop_page-header;
+    }
+  }
+
+  &__container {
+    padding: 1rem 1.5rem;
+    @include tablet {
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      padding: 1.5rem 2.5rem;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      width: 50%;
+    }
+    &-header {
+      @include table-header;
+      color: $Slate;
+      margin-bottom: 0.25rem;
+      @include tablet {
+        @include tablet_desktop_table-header;
+      }
+    }
+    &-description {
+      @include body-medimum;
+      margin-bottom: 1rem;
+      color: $Instock-Black;
+      font-weight: 100;
+      width: 95%;
+      @include tablet {
+        margin-bottom: 2rem;
+        @include tablet_desktop_body-medimum;
+        width: 85%;
+      }
+    }
+  }
+
+  &__availability {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 50%;
+      padding-left: 5%;
+      border-left: 1px solid $Cloud;
+    }
+
+    &-amount {
+      display: flex;
+      flex-direction: row;
+
+      &-status {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        @include tablet {
+          width: 100%;
+        }
+      }
+      &-quantity {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+    }
+
+    &-header {
+      @include labels-buttons;
+      color: $Slate;
+      margin-bottom: 0.5rem;
+      @include tablet {
+        @include tablet_desktop_labels-buttons;
+      }
+    }
+
+    &-instock {
+      width: 3.8125rem;
+      height: 1.5rem;
+      color: $Green;
+      background: rgba(21, 132, 99, 0.07);
+      padding: 0.25rem 0.5rem;
+      border-radius: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      @include table-header;
+    }
+
+    &-outstock {
+      width: 5.375rem;
+      height: 1.5rem;
+      text-transform: uppercase;
+      color: $Red;
+      background: rgba(201, 69, 21, 0.07);
+      margin-bottom: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      @include table-header;
+      @include tablet {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__category {
+    margin-bottom: 0.5rem;
+  }
+}

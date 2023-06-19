@@ -1,0 +1,18 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.footer__copyright {
+  @include table-header;
+  color: $Slate;
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  @include tablet {
+    @include tablet_desktop_table-header;
+  }
+
+  @include desktop {
+    margin-bottom: 3rem;
+  }
+}

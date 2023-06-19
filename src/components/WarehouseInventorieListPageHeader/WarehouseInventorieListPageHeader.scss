@@ -1,0 +1,75 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.warehouseInventoryHeader {
+  width: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background: rgba(247, 248, 249, 0.7);
+  color: $Slate;
+  height: 2.5rem;
+  display: none;
+  padding: 0.6875rem 2rem;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  @include desktop {
+    @include desktop-grid;
+    padding: 0.6875rem 2.5rem;
+  }
+
+  &__heading {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+  &__container {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  &__heading-warehouse {
+    @include tablet_desktop_table-header;
+    color: $Slate;
+  }
+
+  &__heading-icon {
+    width: 1rem;
+  }
+
+  &__container--itemNameWitdh {
+    @include tablet {
+      width: 48%;
+    }
+  }
+
+  &__container--categoryWitdh {
+    @include tablet {
+      width: 42%;
+    }
+  }
+
+  &__container--statusWitdh {
+    @include tablet {
+      width: 55%;
+    }
+  }
+
+  &__container--quantityWitdh {
+    @include tablet {
+      width: 35%;
+    }
+  }
+
+  &__container--actionsWitdh {
+    @include tablet {
+      width: 20%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

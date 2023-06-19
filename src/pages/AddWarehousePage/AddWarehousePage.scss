@@ -1,0 +1,162 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts";
+
+.add-warehouse {
+  @include cardSizing;
+
+  @include tablet {
+    margin-bottom: 16.375rem;
+  }
+
+  @include desktop {
+    margin: -5.875rem auto 5.9375rem auto;
+  }
+
+  &__header {
+    display: flex;
+    height: 5.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1.5rem;
+
+    @include tablet {
+      padding: 0 2rem;
+      height: 5.8125rem;
+      border-bottom: 1px solid $Cloud;
+    }
+
+    @include desktop {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__title {
+    @include page-header;
+
+    @include tablet {
+      @include tablet_desktop_page-header;
+    }
+  }
+
+  &__buttons {
+    @include buttons;
+  }
+
+  &__buttons-cancel {
+    @include button-cancel;
+  }
+
+  &__buttons-submit {
+    @include button-submit;
+  }
+}
+
+.add-warehouse-form {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.warehouse-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  gap: 1rem;
+  border-top: 1px solid $Cloud;
+  flex-grow: 1;
+
+  @include tablet {
+    padding: 0 2rem 0.5rem 2rem;
+    margin: 1.5rem 0;
+    border: none;
+    gap: 1.5rem;
+  }
+
+  @include desktop {
+    padding: 0 2.5rem 0.5rem 2.5rem;
+  }
+
+  &--left {
+    @include tablet {
+      border-right: 1px solid $Cloud;
+    }
+  }
+
+  &__title {
+    @include subheader;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      @include tablet_desktop_subheader;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    @include labels-buttons;
+    position: relative;
+
+    @include tablet {
+      @include tablet_desktop_labels-buttons;
+    }
+  }
+
+  &__input {
+    height: 2.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+    border: 1px solid $Cloud;
+    margin-top: 0.25rem;
+    @include body-medimum;
+
+    @include tablet {
+      height: 2.375rem;
+      @include tablet_desktop_body-medimum;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $Instock-Indigo;
+    }
+
+    &--error {
+      border-color: $Red;
+    }
+  }
+
+  &__error {
+    display: flex;
+    margin-top: 0.25rem;
+    gap: 0.25rem;
+    align-items: center;
+    position: absolute;
+    top: 3.75rem;
+  }
+
+  &__error-icon {
+    width: 1rem;
+  }
+
+  &__error-message {
+    color: $Red;
+  }
+}
+
+.go-back-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.warehouse-form {
+  &__input {
+    &--error {
+      border-color: $Red;
+    }
+  }
+}

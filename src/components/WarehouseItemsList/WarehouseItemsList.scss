@@ -1,0 +1,171 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.warehouseList {
+  &__box {
+    border-bottom: 0.1rem solid $Cloud;
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding-left: 4rem;
+    }
+  }
+  &__text-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    @include tablet {
+    }
+  }
+  &__column {
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: normal;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      width: 40%;
+    }
+  }
+
+  &__info-warehouse {
+    width: 50%;
+    display: inline-block;
+    order: -2;
+    @include tablet {
+      display: flex;
+
+      align-items: center;
+    }
+  }
+  &__info-address {
+    width: 50%;
+    display: inline-block;
+    @include tablet {
+      width: 55%;
+      display: flex;
+
+      align-items: center;
+    }
+  }
+
+  &__column-contacts {
+    width: 20%;
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include tablet {
+      gap: 5rem;
+      width: auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__info-contact {
+    width: 40%;
+    display: inline-block;
+    order: -1;
+    @include tablet {
+      width: 45%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__info-contact-info {
+    @include body-medimum;
+    width: 50%;
+    display: inline-block;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include tablet_desktop_body-medimum;
+    }
+  }
+
+  &__mobile-header {
+    @include table-header;
+    color: $Slate;
+    text-transform: uppercase;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__address-text {
+    @include body-medimum;
+    @include tablet {
+      padding-left: 1rem;
+    }
+  }
+  &__contact-text {
+    @include body-medimum;
+    padding-left: 0;
+    @include tablet {
+      @include tablet_desktop_body-medimum;
+    }
+  }
+
+  &__chevron {
+    display: flex;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__link-anchor {
+    color: $Instock-Indigo;
+    text-decoration: none;
+    @include body-large;
+    @include tablet {
+      @include tablet_desktop_body-large;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    @include tablet {
+      width: 30%;
+      display: inline-block;
+    }
+  }
+
+  &__icon {
+    height: 1.7rem;
+    margin: 1rem 0.5rem 0 0;
+    @include tablet {
+      margin: 1rem 0.5rem 0 0;
+      @include desktop {
+        margin: 1rem 2rem 0 0;
+      }
+    }
+  }
+
+  &__chevron-link {
+    display: flex;
+    align-items: top;
+  }
+}

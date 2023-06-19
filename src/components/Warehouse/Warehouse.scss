@@ -1,0 +1,153 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
+.warehouseList {
+  &__box {
+    border-bottom: 0.1rem solid $Cloud;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding: 1rem 2rem;
+      min-height: 4.75rem;
+    }
+
+    @include desktop {
+      padding: 1rem 2.5rem;
+    }
+  }
+
+  &__mobile-header {
+    @include table-header;
+    color: $Slate;
+    text-transform: uppercase;
+    margin-top: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__chevron-link {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  &__link-anchor {
+    color: $Instock-Indigo;
+    text-decoration: none;
+    @include labels-buttons;
+
+    @include tablet {
+      @include tablet_desktop_labels-buttons;
+    }
+  }
+
+  &__chevron-image {
+    width: 1.25rem;
+  }
+
+  &__text {
+    @include body-medimum;
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet {
+      @include tablet_desktop_body-medimum;
+      width: 80%;
+    }
+  }
+
+  &__info-warehouse {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    order: -2;
+    gap: 0.25rem;
+
+    @include tablet {
+      width: 50%;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__info-address {
+    width: 50%;
+    display: inline-block;
+
+    @include tablet {
+      width: 45%;
+      display: flex;
+      align-items: center;
+    }
+
+    @include desktop {
+      width: 60%;
+    }
+  }
+
+  &__info-contact {
+    width: 50%;
+    display: inline-block;
+    order: -1;
+
+    @include tablet {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      order: 0;
+    }
+
+    @include desktop {
+      width: 40%;
+    }
+  }
+
+  &__info-contact-info {
+    width: 50%;
+    display: inline-block;
+
+    @include tablet {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__address-text {
+    @include tablet {
+      padding-left: 1rem;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 20%;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__icon {
+    width: 1.5rem;
+    margin: 1rem 0;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+}

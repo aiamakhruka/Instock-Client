@@ -1,0 +1,217 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+
+//Layout
+// screen sizes are defined at 768px, but are applied to screen sizes from 768px to 1279px.
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+// DESKTOP screen sizes are defined at 1280px, but are applied to screen sizes 1280px and greater.
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Type Kit
+
+//Handle Text when font is not matching mockups
+@mixin handleText($fontSize, $lineHeight, $weight) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $weight;
+}
+
+// Mobile Text
+@mixin page-header {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+
+@mixin subheader {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+@mixin labels-buttons {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+@mixin table-header {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+@mixin body-large {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  font-weight: 400;
+}
+
+@mixin body-medimum {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@mixin body-small {
+  font-size: 0.6875rem;
+  line-height: 0.0725rem;
+  font-weight: 400;
+}
+
+// Tablet & Desktop
+@mixin tablet_desktop_page-header {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+@mixin tablet_desktop_subheader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin tablet_desktop_labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+@mixin tablet_desktop_table-header {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+}
+
+@mixin tablet_desktop_body-large {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+@mixin tablet_desktop_body-medimum {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+@mixin tablet_desktop_body-small {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+//Layout Grid
+@mixin mobile-grid {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@mixin tablet-grid {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+@mixin desktop-grid {
+  width: 63.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//card size for everypage
+@mixin cardSizing {
+  color: $Instock-Black;
+  background-color: $White;
+  box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 0.1875rem;
+  margin: -4rem 1rem 2.5rem 1rem;
+
+  @include tablet {
+    margin: -5.875rem 2rem 4.375rem 2rem;
+  }
+
+  @include desktop {
+    width: 63.75rem;
+    margin: -5.875rem auto 5.9375rem auto;
+  }
+}
+
+@mixin buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 4.25rem;
+  background: rgba(247, 248, 249, 0.7);
+
+  @include tablet {
+    width: 100%;
+    justify-content: flex-end;
+    height: 4.375rem;
+  }
+}
+
+@mixin button-cancel {
+  width: 50%;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid $Cloud;
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  @include labels-buttons;
+
+  &:hover {
+    color: $Instock-Indigo;
+    border-color: $Instock-Indigo;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 0.5rem 1rem;
+    width: auto;
+    @include tablet_desktop_labels-buttons;
+  }
+}
+
+@mixin button-submit {
+  width: 50%;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid $Cloud;
+  padding: 0.5rem;
+  margin-right: 1.5rem;
+  background-color: $Instock-Indigo;
+  color: $White;
+  cursor: pointer;
+  @include labels-buttons;
+
+  &:hover {
+    background-color: $Graphite;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 0.5rem 1rem;
+    width: auto;
+    @include tablet_desktop_labels-buttons;
+  }
+
+  @include tablet {
+    margin-right: 2rem;
+  }
+
+  @include desktop {
+    margin-right: 2.5rem;
+  }
+}
